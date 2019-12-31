@@ -36,8 +36,6 @@ namespace CsharpDDD1.ApplicationService.Services
 
         public void SaveData(string bookName,DateTime purchasedDate)
         {
-            Guard.IsNullOrEmptyMessage(bookName, "書籍名が空欄です。", ExceptionType.Information);            
-
             var book = new BookEntity(Guid.NewGuid().ToString(), bookName, purchasedDate);
             bookRepository.SaveData(book);
         }
